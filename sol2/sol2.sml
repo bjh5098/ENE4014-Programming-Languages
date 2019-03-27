@@ -1,6 +1,6 @@
 (*
         Assignment2
-        2015004575 JunHyeok Bae
+        2015004575 JunHyeok Bae 
 *)
 
 (*Problems 1*)
