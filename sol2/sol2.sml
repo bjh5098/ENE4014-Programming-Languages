@@ -134,8 +134,10 @@ val mustFalse3 =checkMetro(AREA("a", AREA("b", CONNECT(STATION "a", STATION "c")
 val mustFalse4 =checkMetro(AREA("a", CONNECT(STATION "a", AREA("b", STATION "c"))))
 val mustFalse5 =checkMetro(AREA("a", AREA("k", CONNECT(STATION "c", AREA("c",STATION("k"))))))
 
+
 val testsq = seq(1,6)
 val testmulti1 = firstN(filterMultiples(seq(2,6),2),10)
 val testmulti2 = firstN(filterMultiples(seq(3,8),3),10)
 val testprimes1 = firstN(primes(),20);
-val testprimes2 = Nth(primes(),20);
+val testprimes2 = firstN(primes(),10);
+val testprimes3 = Nth(primes(),20);
