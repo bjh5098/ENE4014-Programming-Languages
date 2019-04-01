@@ -106,7 +106,7 @@ fun filterMultiples(lazyListVal,n) =
                             else cons(hd,fn() => filterMultiples(f(),n))
 
 
-(*Problems 3-1*) 
+(*Problems 3-2*) 
 
 fun primes() =
     let
@@ -121,6 +121,7 @@ fun primes() =
 (*
         test
 
+val evalTest = eval(ANDALSO(ORELSE(ANDALSO(TRUE,FALSE),IMPLY(FALSE,FALSE)),LESS(PLUS(NUM(1),NUM(3)),(MINUS(NUM(5),NUM(2))))))
 
 val mustTrue1 =checkMetro(AREA("a", STATION "a"))
 val mustTrue2 =checkMetro(AREA("a", AREA("a", STATION "a")))
@@ -141,17 +142,4 @@ val testprimes1 = firstN(primes(),20);
 val testprimes2 = firstN(primes(),10);
 val testprimes3 = Nth(primes(),20);
 
-*)
-val evalTest = eval(ANDALSO(ORELSE(ANDALSO(TRUE,FALSE),IMPLY(FALSE,FALSE)),LESS(PLUS(NUM(1),NUM(3)),(MINUS(NUM(5),NUM(2))))))
-(*
-    Test case description
-
-    ANDALSO    =>[FALSE]
-        ORELSE =>TRUE
-            ANDALSO(TRUE,FALSE)    => FALSE
-            ,IMPLY(FALSE,FALSE)   => TRUE
-        ,LESS  =>FALSE
-            PLUS(1,3)       => NUM(4)
-            ,MINUS(5,2)    => NUM(3)
-     
 *)
