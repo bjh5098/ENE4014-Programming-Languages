@@ -17,21 +17,23 @@ datatype valu = Const of int
 
 fun check_pat(p) = 
 	let
-		fun ck_strlist(pat,slist) =
+		fun ch_strlist(pat,slist) =
 			case pat of
 				Variable(s) => slist @ [s]
-			|	ConstructorP(s,p) => ck_strlist(p,slist)
-			|	TupleP(plist) => foldl ck_strlist slist plist
+			|	ConstructorP(s,p) => ch_strlist(p,slist)
+			|	TupleP(plist) => foldl ch_strlist slist plist
 			|	_ => slist
 
 		fun isDistinct(slist) =
 			case slist of
 				[] => true
 			|	x::[] => true
-			|	x1::x2::xs => if(x1 = x2) then false
-					      else true andalso isDistinct(xs)
+			|	x1::x2::xs => if(x1 = x2) 
+                                                then false
+					        else true andalso isDistinct(xs)
 	in
-		if(isDistinct(mk_strlist(p,[]))) then true
+		if(isDistinct(ch_strlist(p,[]))) 
+                then true
 		else false
 	end
 
