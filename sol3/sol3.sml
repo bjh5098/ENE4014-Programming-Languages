@@ -111,7 +111,15 @@ val rp = alterTwo(ROCK,PAPER)
 val sr = alterTwo(SCISSORS,ROCK)
 val ps = alterTwo(PAPER,SCISSORS)
 val rs = alterTwo(ROCK,SCISSORS)
+val sp = alterTwo(SCISSORS,PAPER)
+val pr = alterTwo(PAPER,ROCK)
 val srp = alterThree(SCISSORS,ROCK,PAPER)
+val spr = alterThree(SCISSORS,PAPER,ROCK)
+val rsp = alterThree(ROCK,SCISSORS,PAPER)
+val rps = alterThree(ROCK,PAPER,SCISSORS)
+val prs = alterThree(PAPER,ROCK,SCISSORS)
+val psr = alterThree(PAPER,SCISSORS,ROCK)
+
 
 fun next(strategyRef) =
 	let 
@@ -129,15 +137,15 @@ fun whosWinner(t) =
 			(PLAYER(a,b),MATCH(t1,t2)) => match_game(PLAYER(a,b), match_game(t1,t2))
 		|	(MATCH(t1,t2),PLAYER(a,b)) => match_game(PLAYER(a,b), match_game(t1,t2))
 		|	(MATCH(t1,t2),MATCH(t3,t4)) => match_game(match_game(t1,t2), match_game(t3,t4))
-		|	(PLAYER(name1,strategyRef1),PLAYER(name2,strategyRef2)) => 
+		|	(PLAYER(n1,strRef1),PLAYER(n2,strRef2)) => 
 				let 
-					val s1 = next(strategyRef1)
-					val s2 = next(strategyRef2)
+					val s1 = next(strRef1)
+					val s2 = next(strRef2)
 				in
-					if(s1 = s2) then match_game(PLAYER(name1,strategyRef1),PLAYER(name2,strategyRef2))
+					if(s1 = s2) then match_game(PLAYER(n1,strRef1),PLAYER(n2,strRef2))
 					else if((s1 = ROCK andalso s2 = SCISSORS) orelse (s1 = SCISSORS andalso s2 = PAPER) orelse (s1 = PAPER andalso s2 = ROCK))
-					then PLAYER(name1,strategyRef1)
-					else PLAYER(name2,strategyRef2)
+					then PLAYER(n1,strRef1)
+					else PLAYER(n2,strRef2)
 				end
 	
 	in
