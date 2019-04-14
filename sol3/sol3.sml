@@ -158,7 +158,7 @@ fun whosWinner(t) =
 
 
 (*test case*)
-
+(*
 
 val SampleConstructorP = ConstructorP ("ConName",TupleP([Variable "test3",Variable "test4"]))
 val SampleConstructor = Constructor("ConName",Tuple ([Constructor("forTest3",Const 9), Tuple([Constructor("forTest4inTuple",Const 11 )])]))
@@ -169,6 +169,7 @@ val endResult = check_pat(SamplePattern)
 
 val testRSP = whosWinner(MATCH(PLAYER("s", ref s),MATCH(PLAYER("rp", ref rp), PLAYER("r", ref r))))
 val testRSP2 = whosWinner(MATCH(MATCH(PLAYER("rsp", ref rsp),PLAYER("ps",ref ps)),MATCH(PLAYER("srp", ref srp), PLAYER("prs", ref prs))))
+*)
 (*
         round 1 : rsp vs ps
         round 2 : srp vs prs
