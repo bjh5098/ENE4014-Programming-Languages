@@ -159,6 +159,11 @@ fun whosWinner(t) =
 
 (*test case*)
 (*
+val p1 = ConstructorP("what", TupleP([TupleP([UnitP, Wildcard, ConstP(1), TupleP([Variable("b"), Variable("c"), ConstP(3)]), Variable("a")])]))
+val v1 = Constructor("what", Tuple([Tuple([Unit, Const(1), Const(1), Tuple([Const(4), Unit, Const(3)]), Tuple([Const(5),Const(6)])])]))
+val testM = match(v1,p1)
+*)
+(*
 
 val SampleConstructorP = ConstructorP ("ConName",TupleP([Variable "test3",Variable "test4"]))
 val SampleConstructor = Constructor("ConName",Tuple ([Constructor("forTest3",Const 9), Tuple([Constructor("forTest4inTuple",Const 11 )])]))
