@@ -166,6 +166,7 @@ val SampleConstructor = Constructor("ConName",Tuple ([Constructor("forTest3",Con
 val SamplePattern = TupleP([UnitP, ConstP 3, Variable "test1", Variable "test2", SampleConstructorP])
 val SampleValu = Tuple([Unit,Const 3, Const 5, Const 6, SampleConstructor])
 val endResult = check_pat(SamplePattern)
+val testMatch = match(SampleValu,SamplePattern)
 
 val testRSP = whosWinner(MATCH(PLAYER("s", ref s),MATCH(PLAYER("rp", ref rp), PLAYER("r", ref r))))
 val testRSP2 = whosWinner(MATCH(MATCH(PLAYER("rsp", ref rsp),PLAYER("ps",ref ps)),MATCH(PLAYER("srp", ref srp), PLAYER("prs", ref prs))))
